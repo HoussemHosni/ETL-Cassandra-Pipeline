@@ -16,18 +16,18 @@ Each Table in The Cassandra database is designed based on a specific Query To op
 
 ### Query : SELECT artist, length, song FROM music_library WHERE sessionid = 338 AND iteminsession = 4
 #### Corresponding Table : music_library_by_sessions
-`artist, iteminsession, length, sessionid, song`  
-`(sessionid, iteminsession) as a Composite Primary Key`  
+- `artist, iteminsession, length, sessionid, song`  
+- `(sessionid, iteminsession) as a Composite Primary Key`  
 
 ### Query : SELECT artist, song, firstname, lastname FROM music_library WHERE userid = 10 AND sessionid = 182
 #### Corresponding Table : music_library_by_users_and_sessions
-`artist, iteminsession, song, firstname, lastname, sessionid, userid`  
-`(userid, sessionid) as a Composite Partition Key and iteminsession as a Clustering Column`  
+- `artist, iteminsession, song, firstname, lastname, sessionid, userid`  
+- `(userid, sessionid) as a Composite Partition Key and iteminsession as a Clustering Column`  
 
 ### Query : SELECT firstname, lastname FROM music_library WHERE song = 'All Hands Against His Own'
 #### Corresponding Table : music_library_by_songs
-`firstname, lastname, song, userid`  
-`(song, userid) Composite Partition Key to make Primary Keys Unique`  
+- `firstname, lastname, song, userid`  
+- `(song, userid) Composite Partition Key to make Primary Keys Unique`  
 
 ## ETL Pipeline
 
