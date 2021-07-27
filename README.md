@@ -42,3 +42,9 @@ To do so, we manage to:
 - Process Event Data Directory
     - Parsing all CSV files and pulling data in one single CSV File  
 - Loading data into each Table with corresponding columns data from each row.
+
+## Setup
+
+1. Run pip install -r requirements.txt to install required libraries.
+2. Run python create_tables.py to create the cassandra KEYSPACE and the required tables.
+3. Run python etl.py to run the etl pipeline.
