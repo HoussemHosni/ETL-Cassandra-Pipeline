@@ -114,11 +114,13 @@ def main():
     insert_into_table_3(session, file)
 
     # Run SELECT Queries
+    i = 1
     for query in SELECT_QUERIES:
         rows = run_select_query(session, query)
+        print(f"Results for Query {i} :")
         for row in rows:
             print(row)
-        print("############################################################")
+        i += 1
 
     session.shutdown()
     cluster.shutdown()
